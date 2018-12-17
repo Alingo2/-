@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn"> 登录程序 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+</view>
+<view class="welcome">
+欢迎使用鱼家
+</view>
+
+<button class='.btn' bindtap="test">看温度！！</button>
+<button class='.btn' bindtap="kaiguan">开关</button>
+<button class='.btn' bindtap="ziliao">养鱼资料推荐~</button>
+
+<button class='.btn' bindtap="showDialogBtn">设定滤材更换时间</button>
+  <view class="modal-mask" bindtap="time" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">  设定滤材的寿命</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="number" name="time" bindinput='time1' maxlength="10" placeholder="时间"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+  </view>
+
+<view class=".neirong">滤材剩下的寿命还有:<text style='color:red'>{{countDownNum}}</text>s</view>

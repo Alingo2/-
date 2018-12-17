@@ -1,0 +1,9 @@
+<!--pages/others/others.wxml-->
+<text class=".neirong">关于我们</text>
+    <view class='wrapper'>
+        <button class='.btn' bindtap='tiaozhuan'>进入Onenet~</button>
+      </view>
+
+    <view class='wrapper'>
+        <button class='.btn' bindtap='kanshiping'>去看看我们的宣传片~</button>
+      </view>

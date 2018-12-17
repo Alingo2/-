@@ -1,0 +1,23 @@
+/* pages/information/information.wxss */
+.btn {
+  width: 90%;
+  margin-top: 30rpx;
+  background-color: #9966FF;
+  color: rgb(0, 255, 136);
+}
+.btn2 {
+  width: 90%;
+  margin-top: 30rpx;
+  background-color: rgb(73, 164, 206);
+  color: rgb(255, 210, 10);
+}
+page {
+  background-image: url("https://images.pexels.com/photos/1078981/pexels-photo-1078981.jpeg?cs=srgb&dl=aerial-aerial-shot-aerial-view-1078981.jpg&fm=jpg");
+  background-size:100% 100%;
+}
+.neirong{
+ font-family: 楷体;
+ color:rgb(255, 210, 10);
+ font-size: 45rpx;
+ font-weight: bold;
+}

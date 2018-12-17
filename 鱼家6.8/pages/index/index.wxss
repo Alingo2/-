@@ -1,0 +1,132 @@
+/**index.wxss**/
+page{
+  background-image: url("https://images.pexels.com/photos/1243253/pexels-photo-1243253.jpeg?cs=srgb&dl=beach-clouds-daylight-1243253.jpg&fm=jpg");
+  background-size: 100% 100%;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.btn {
+  width: 70%;
+  margin-top: 30rpx;
+  background-color: #c6fdf1;
+  border-bottom-color: rgb(35, 170, 248);
+  color: #f1a043;
+  text-align: center;
+  font-style: normal;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 5rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  font-family: 楷体;
+  font-weight:bold;
+  text-align:center;
+}
+
+.welcome{
+  font-size: 30px;
+  font-family: 楷体;
+  font-weight:bold;
+  margin-bottom: 30rpx;
+  text-align:center;
+  margin-top: 30rpx;
+}
+
+page {
+  background-color: #fafafa;
+}
+
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #fff;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+.modal-input {
+  display: flex;
+  background: #fff;
+  border-bottom: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+.btn-confirm {
+  width: 50%;
+  color: #ec5300;
+  text-align: center;
+}
+
+.neirong{
+ font-family: 楷体;
+ color:#ff0898;
+ font-size: 45rpx;
+ font-weight: bold;
+}

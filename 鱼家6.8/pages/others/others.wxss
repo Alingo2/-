@@ -1,0 +1,26 @@
+/* pages/others/others.wxss */
+page {
+  background-image: url("https://images.pexels.com/photos/17727/pexels-photo.jpg?cs=srgb&dl=beach-salt-water-sand-17727.jpg&fm=jpg");
+  background-size: 100% 100%;
+}
+
+video1{
+  width: 300rpx 400rpx
+}
+
+.btn {
+  width: 70%;
+  margin-top: 30rpx;
+  background-color: #9966FF;
+  border-bottom-color: rgb(35, 170, 248);
+  color: rgb(0, 255, 136);
+  text-align: center;
+  font-style: normal;
+}
+
+.neirong{
+ font-family: 楷体;
+ color:rgb(248, 0, 207);
+ font-size: 45rpx;
+ font-weight: bold;
+}

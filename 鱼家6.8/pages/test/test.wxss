@@ -1,0 +1,17 @@
+/* pages/test/test.wxss */
+.section1{
+   
+  font-size: 30px;
+ color:rgb(20, 150, 236);
+text-align: center;
+
+
+}
+.section2{
+   
+  font-size: 30px;
+ color:rgb(248, 37, 0);
+text-align: center;
+
+
+}

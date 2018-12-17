@@ -1,0 +1,32 @@
+<!--pages/control/control.wxml-->
+<text class=".neirong">控制设备</text>
+<button class='.btn' bindtap="opentree">圣诞树</button>
+<button class='.btn' bindtap="closetree">不想看见圣诞树</button>
+<button class='.btn' bindtap="openclock">几点啦？</button>
+<button class='.btn' bindtap="closeclock">关闭时钟</button>
+<!--<button class='.btn' bindtap="weishi">鱼儿饿啦！</button>-->
+<button class='.btn' bindtap="openheat">开启加热</button>
+<button class='.btn' bindtap="closeheat">关闭加热</button>
+<button class='.btn' bindtap="openlight">为你的鱼儿开灯~</button>
+<button class='.btn' bindtap="closelight">鱼儿想睡觉啦~</button>
+<button class='.btn' bindtap="openmusic">MUSIC~！</button>
+<button class='.btn' bindtap="closemusic">鱼儿想静静</button>
+<button class='.btn' bindtap="openxiaoge">奏校歌~</button>
+<button class='.btn' bindtap="closexiaoge">校歌停！</button>
+<button class=".btn" bindtap="showDialogBtn">喂食</button> 
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="weishi" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">鱼儿饿了！</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="number" name="quanshu1" bindinput='quanshu' maxlength="10" placeholder="投食圈数"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+  </view>
+
+<view>{{circle1}}</view>

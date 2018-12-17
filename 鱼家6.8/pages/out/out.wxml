@@ -1,0 +1,3 @@
+<!--pages/out/out.wxml-->
+<text>pages/out/out.wxml</text>
+<web-view src="https://open.iot.10086.cn/"></web-view>

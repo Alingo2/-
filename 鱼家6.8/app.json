@@ -1,0 +1,57 @@
+{
+  "pages": [
+
+    "pages/gesture/gesture",
+    "pages/index/index",
+    "pages/test/test",
+    "pages/logs/logs",
+    "pages/others/others",
+    "pages/control/control",
+    "pages/information/information",
+    "pages/information/tem/tem",
+    "pages/information/light/light",
+    "pages/information/soiltem/soiltem",
+    "pages/out/out",
+    "pages/switch/switch",
+    "pages/shiping/shiping",
+    "pages/ziliao/ziliao",
+    "pages/666/666"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F0F8FF",
+    "navigationBarTitleText": "鱼家",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "backgroundColor": "#F0F8FF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "pages/img/首页.png",
+        "selectedIconPath": "pages/img/首页.png"
+      },
+      {
+        "pagePath": "pages/information/information",
+        "text": "获取信息",
+        "iconPath": "pages/img/系统菜单.png",
+        "selectedIconPath": "pages/img/系统菜单.png"
+      },
+      {
+        "pagePath": "pages/control/control",
+        "text": "控制台",
+        "iconPath": "pages/img/解锁.png",
+        "selectedIconPath": "pages/img/解锁.png"
+      },
+      {
+        "pagePath": "pages/others/others",
+        "text": "关于我们",
+        "iconPath": "pages/img/信息.png",
+        "selectedIconPath": "pages/img/信息.png"
+      }
+    ],
+    "debug": true
+  }
+}

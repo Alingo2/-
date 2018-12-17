@@ -1,0 +1,3 @@
+<!--pages/ziliao/ziliao.wxml-->
+<text>pages/ziliao/ziliao.wxml</text>
+<web-view src="http://www.fishome.net/"></web-view>

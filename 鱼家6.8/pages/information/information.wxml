@@ -1,0 +1,5 @@
+<!--pages/information/information.wxml-->
+<text class=".neirong">获取你想要的信息</text>
+<button class='.btn' bindtap="getTem">获取温度</button>
+<button class='.btn2' bindtap="getLight">获取光强</button>
+<button class='.btn' bindtap="getSoiltem">植物温度</button>

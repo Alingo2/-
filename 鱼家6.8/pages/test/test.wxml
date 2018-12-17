@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<text class='section1'>水温是：</text><text class='section2'>{{test}}\n\n\n</text>
+<text class='section1'>植物温度是：</text><text class='section2'>{{test1}}\n\n\n</text>
+<text class='section1'>光照强度是：</text><text class='section2'>{{test2}}\n\n\n</text>

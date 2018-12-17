@@ -1,0 +1,3 @@
+<!--pages/information/tem/tem.wxml-->
+<canvas class = "canvas" id="chart1"
+canvas-id="caowen"></canvas>
