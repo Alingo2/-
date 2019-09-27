@@ -1,5 +1,14 @@
 // pages/others/others.js
 Page({
+  data:{
+    jump: false,
+  },
+  jump_baidu: function(){
+    this.setData({
+      jump:true
+    }
+    )
+  },
   tiaozhuan: function () {
     wx.navigateTo({
       url: '../out/out', //

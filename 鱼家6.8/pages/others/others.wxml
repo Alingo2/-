@@ -4,6 +4,8 @@
         <button class='.btn' bindtap='tiaozhuan'>进入Onenet~</button>
       </view>
 
+  <web-view wx:if="{{jump}}"src="https://open.iot.10086.cn/"></web-view>
+  <button bindtap="jump_baidu">百度</button>
     <view class='wrapper'>
         <button class='.btn' bindtap='kanshiping'>去看看我们的宣传片~</button>
       </view>

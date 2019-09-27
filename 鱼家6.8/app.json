@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/gesture/gesture",
     "pages/index/index",
     "pages/test/test",
@@ -53,5 +52,6 @@
       }
     ],
     "debug": true
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
