@@ -1,0 +1,7 @@
+page {
+  font-size: 15px;
+}
+.my_title{
+  margin-top: 10px;
+  background-color: rgba(84, 176, 230, 0.1);
+}

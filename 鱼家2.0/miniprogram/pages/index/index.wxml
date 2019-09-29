@@ -1,0 +1,52 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">鱼家2.0</view>
+</cu-custom>
+<view class="text-center text-shadow text-cyan my_title">
+  欢迎使用鱼家
+</view>
+
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title margin-right-sm text-shadow text-red">控制水泵</text>
+    </view>
+    <view class="action">
+      <switch class="sm" bindchange="SetShadow"></switch>
+    </view>
+  </view>
+  <view class="cu-list menu">
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-red">控制加热</text>
+      <switch class="sm" bindchange="SetShadow"></switch>
+    </view>
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-red">控制照明灯</text>
+      <switch class="sm" bindchange="SetShadow"></switch>
+    </view>
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-orange">查看温度</text>
+      <button class="cu-btn bg-green shadow">去瞅瞅</button>
+    </view>
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-orange">查看光强</text>
+      <button class="cu-btn bg-green shadow">去瞧瞧</button>
+    </view>
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-blue">定时提醒我</text>
+      <button class="cu-btn bg-green shadow">去设置</button>
+    </view>
+  </view>
+  
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/home.png"></image>
+    </view>
+    <view class="text-blue">主页</view>
+  </view>
+  <view class="action">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/about_us.png"></image>
+    </view>
+    <view class="text-blue">关于我们</view>
+  </view>
+</view>

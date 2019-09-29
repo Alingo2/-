@@ -13,8 +13,7 @@
     "pages/out/out",
     "pages/switch/switch",
     "pages/shiping/shiping",
-    "pages/ziliao/ziliao",
-    "pages/666/666"
+    "pages/ziliao/ziliao"
   ],
   "window": {
     "backgroundTextStyle": "light",
