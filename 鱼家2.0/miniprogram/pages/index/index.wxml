@@ -10,17 +10,16 @@
     </view>
     <view class="text-blue">主页</view>
   </view>
-  <view class="action" bindtap="NavChange" data-cur="about">
-    <view class='cuIcon-cu-image'>
-      <image src="/images/about_us.png"></image>
-    </view>
-    <view class="text-blue">关于我们</view>
-  </view>
   <view class="action" bindtap="NavChange" data-cur="timeline">
     <view class='cuIcon-cu-image'>
+      <image src="/images/timeline.png"></image>
+    </view>
+    <view class="text-blue">时间轴</view>
+  </view>
+    <view class="action" bindtap="NavChange" data-cur="about">
+    <view class='cuIcon-cu-image'>
       <image src="/images/about_us.png"></image>
     </view>
     <view class="text-blue">关于我们</view>
   </view>
-  
 </view>

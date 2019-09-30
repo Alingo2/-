@@ -1,50 +1,47 @@
 // pages/timeline/timeline.js
 Component({
-  /**
-   * 组件的属性列表
-   */
+  options: {
+    addGlobalClass: true,
+  },
   properties: {
 
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
-    color:["green","red","gray","blue"],
+    color:["green","red","blue"],
+    icon: ["noticefill", "attentionforbidfill","evaluate_fill",],
     my_dataset: [
       {
-        date: "昨天",
+        date: "9-19",
         content: [
           {
             time: "10:22",
             movement_type: 0,
-            text: "zjhnb"
+            text: "fylnb"
           },
           {
             time: "5:99",
             movement_type: 1,
-            text: "zjh真nb"
+            text: "fyl真nb"
           },
           {
             time: "99:14",
             movement_type: 2,
-            text: "zjh真的nb"
+            text: "fyl真的nb"
           },
           {
             time: "17:31",
-            movement_type: 3,
-            text: "zjh是真的nb"
+            movement_type: 2,
+            text: "fyl是真的nb"
           },
           {
             time: "16:59",
             movement_type: 1,
-            text: "zjh他是真的nb"
+            text: "fyl他是真的nb"
           },
           {
             time: "22:81",
-            movement_type: 3,
-            text: "zjh他是真的巨nb"
+            movement_type: 2,
+            text: "fyl他是真的巨nb"
           }]
       },
 
@@ -69,24 +66,23 @@ Component({
           },
           {
             time: "17:31",
-            movement_type: 3,
+            movement_type: 2,
             text: "zjh是真的nb"
           },
           {
             time: "16:59",
-            movement_type: 4,
+            movement_type: 2,
             text: "zjh他是真的nb"
           },
           {
             time: "22:81",
-            movement_type: 5,
+            movement_type: 2,
             text: "zjh他是真的巨nb"
           }]
       }
 
     ]
   },
-
   methods: {
 
   }

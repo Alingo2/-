@@ -1,19 +1,12 @@
-<view class="cu-timeline">
-  <view class="cu-time" wx:for="{{my_dataset}}" wx:key="date">
-    <view>{{item.date}}</view>
-    <view wx:for="{{item.content}}" wx:for-item="content" wx:key="movement_type" class="cu-item text-{{color[content.movement_type]}} cuIcon-attentionforbidfill"><view class="content bg-{{color[content.movement_type]}} shadow-blur">{{content.text}}{{color[content.movement_type]}}</view></view>
+<cu-custom bgColor="bg-gradual-red">
+  <view slot="content">时间轴</view>
+</cu-custom>
+
+<view class="cu-timeline" wx:for="{{my_dataset}}" wx:key="date">
+  <view class="cu-time">{{item.date}}</view>
+  <view class="cu-item cur cuIcon-{{color[content.movement_type]}}" wx:for="{{item.content}}" wx:for-item="content" wx:key="movement_type">
+    <view class="content bg-{{color[content.movement_type]}} shadow-blur">
+      <text>{{content.text}}</text>
+    </view>
   </view>
-
-</view>
-
-
-
-
-
-<view class="cu-timeline">
-  <view class="cu-time" wx:for="{{my_dataset}}" wx:key="date">
-    <view>{{item.date}}</view>
-    <view wx:for="{{item.content}}" wx:for-item="content" wx:key="movement_type" class="cu-item cur cuIcon-noticefill"><view class="content bg-green shadow-blur">{{content.text}}{{color[content.movement_type]}}</view></view>
-  </view>
-
 </view>

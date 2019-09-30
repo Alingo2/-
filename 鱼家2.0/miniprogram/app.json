@@ -1,6 +1,5 @@
 {
   "pages": [
-        "pages/test/time",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -14,7 +13,6 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
