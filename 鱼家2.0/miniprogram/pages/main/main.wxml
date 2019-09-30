@@ -1,0 +1,61 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">鱼家2.0</view>
+</cu-custom>
+<view class="text-center text-shadow text-cyan my_title">
+  欢迎使用鱼家
+</view>
+
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title margin-right-sm text-shadow text-red">控制水泵</text>
+    </view>
+    <view class="action">
+      <switch class="sm" bindchange="SetShadow"></switch>
+    </view>
+  </view>
+  <view class="cu-list menu">
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-red">控制加热</text>
+      <switch class="sm" bindchange="SetShadow"></switch>
+    </view>
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-red">控制照明灯</text>
+      <switch class="sm" bindchange="SetShadow"></switch>
+    </view>
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-orange">查看温度</text>
+      <button class="cu-btn bg-green shadow" bindtap="mylert" data-target="ColorModal">去瞅瞅</button>
+    </view>
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-orange">查看光强</text>
+      <button class="cu-btn bg-green shadow">去瞧瞧</button>
+    </view>
+    <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-blue">定时提醒我</text>
+      <button class="cu-btn bg-green shadow">去设置</button>
+    </view>
+  </view>
+  
+
+
+
+<view class="cu-modal {{modalName=='ColorModal'?'show':''}}">
+  <view class="my_lertupbar">
+    <view class="cu-bar justify-end solid-bottom">
+      <view class="content">查看温度</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+    </view>
+    <view class="my_lertcontent">
+    <view class='my_content padding'>
+      <text >当前的温度为:</text>
+      <text >{{temp}}</text>
+    </view>    
+    <view class='my_content padding'>
+      <text >当前的光强为:</text>
+      <text >{{light}}</text>
+    </view>
+    </view>
+  </view>
+</view>

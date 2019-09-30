@@ -1,0 +1,19 @@
+<view class="cu-timeline">
+  <view class="cu-time" wx:for="{{my_dataset}}" wx:key="date">
+    <view>{{item.date}}</view>
+    <view wx:for="{{item.content}}" wx:for-item="content" wx:key="movement_type" class="cu-item text-{{color[content.movement_type]}} cuIcon-attentionforbidfill"><view class="content bg-{{color[content.movement_type]}} shadow-blur">{{content.text}}{{color[content.movement_type]}}</view></view>
+  </view>
+
+</view>
+
+
+
+
+
+<view class="cu-timeline">
+  <view class="cu-time" wx:for="{{my_dataset}}" wx:key="date">
+    <view>{{item.date}}</view>
+    <view wx:for="{{item.content}}" wx:for-item="content" wx:key="movement_type" class="cu-item cur cuIcon-noticefill"><view class="content bg-green shadow-blur">{{content.text}}{{color[content.movement_type]}}</view></view>
+  </view>
+
+</view>
