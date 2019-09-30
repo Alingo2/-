@@ -3,13 +3,15 @@
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
 		"urlCheck": true,
-		"es6": true,
+		"es6": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
 		"enhance": true
 	},
-	"appid": "wx384ade57eb6f1d44",
+	"appid": "wx200a7f1ab11b83ea",
 	"projectname": "%E9%B1%BC%E5%AE%B62.0",
 	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
