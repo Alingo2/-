@@ -6,7 +6,5 @@ Page({
     this.setData({
       PageCur: e.currentTarget.dataset.cur
     })
-    console.log(this.data.PageCur)
   },
-
 })

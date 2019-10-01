@@ -1,9 +1,22 @@
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">鱼家2.0</view>
 </cu-custom>
-<view class="text-center text-shadow text-cyan my_title">
-  欢迎使用鱼家
+
+
+  <view class="cu-bar bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text> 你的小鱼儿
+  </view>
 </view>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
 
   <view class="cu-bar bg-white solid-bottom margin-top">
     <view class="action">
@@ -23,20 +36,14 @@
       <switch class="sm" bindchange="SetShadow"></switch>
     </view>
     <view class="cu-item">
-      <text class="cuIcon-title margin-right-sm text-shadow text-orange">查看温度</text>
+      <text class="cuIcon-title margin-right-sm text-shadow text-orange">查看温度光强</text>
       <button class="cu-btn bg-green shadow" bindtap="mylert" data-target="ColorModal">去瞅瞅</button>
     </view>
     <view class="cu-item">
-      <text class="cuIcon-title margin-right-sm text-shadow text-orange">查看光强</text>
-      <button class="cu-btn bg-green shadow">去瞧瞧</button>
-    </view>
-    <view class="cu-item">
       <text class="cuIcon-title margin-right-sm text-shadow text-blue">定时提醒我</text>
-      <button class="cu-btn bg-green shadow">去设置</button>
+      <button class="cu-btn bg-green shadow" bindtap="mylert" data-target="TimeSetting">去设置</button>
     </view>
   </view>
-  
-
 
 
 <view class="cu-modal {{modalName=='ColorModal'?'show':''}}">
@@ -56,6 +63,26 @@
       <text >当前的光强为:</text>
       <text >{{light}}</text>
     </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="cu-modal {{modalName=='TimeSetting'?'show':''}}">
+  <view class="my_lertupbar">
+    <view class="cu-bar justify-end solid-bottom">
+      <view class="content">定时</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+    </view>
+    <view class="my_lertcontent">
+    <view class='my_content padding'>
+      <form bindsubmit="formSubmit">
+        <input placeholder="请输入提醒时间" name="time"></input>
+        <button form-type="submit" class="cu-btn bg-red shadow">提醒</button>
+      </form>
+    </view>    
     </view>
   </view>
 </view>
