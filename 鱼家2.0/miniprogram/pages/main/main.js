@@ -7,6 +7,7 @@ Component({
     temp: 33,
     light: 22,
     time:0,
+    reminder: 0,
     swiperList: [{
       id: 0,
       hunger:0,
@@ -34,18 +35,33 @@ Component({
         url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569926808268&di=9804e764f11f87459e95133fffa2ed50&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F18%2F01%2F18%2Fdf10c3097a04188d39b27c889477729d.jpg'
     }],
   },
-
   onLoad() {
     this.towerSwiper('swiperList');
   },
+  
   methods:{
+    get_reminder:function(){
+      var _this = this
+      wx.getStorage({
+        key: 'reminder',
+        success: function (res) {
+          _this.setData({
+            reminder: res.data
+          })
+        },
+        fail: function () {
+          console.log('读取key1发生错误')
+        }
+      })
+    },
+
     my_c_bump:function(e){
       var judge=0;
       if(e.detail.value){
-        judge="b_true";
+        judge="true";
       }
       else{
-        judge="b_false";
+        judge="false";
       }
       wx.request({
         method: 'POST',
@@ -84,20 +100,20 @@ Component({
     my_c_heat: function (e) {
       var judge = 0;
       if (e.detail.value) {
-        judge = "h_true";
+        judge = "true";
       }
       else {
-        judge = "h_false";
+        judge = "false";
       }
       wx.request({
         method: 'POST',
-        url: 'http://api.heclouds.com/devices/504877625/datapoints?datastream_id=switch0',
+        url: 'http://api.heclouds.com/devices/504877625/datapoints?datastream_id=switch1',
         header: {
           'api-key': 's1XeGJPJSFgZslYpXCnFPG81V1w='
         },
         data: {
           "datastreams": [{
-            "id": "switch0",
+            "id": "switch1",
             "datapoints": [{
               "at": "",
               "value": judge,
@@ -126,20 +142,20 @@ Component({
     my_c_light: function (e) {
       var judge = 0;
       if (e.detail.value) {
-        judge = "l_true";
+        judge = "true";
       }
       else {
-        judge = "l_false";
+        judge = "false";
       }
       wx.request({
         method: 'POST',
-        url: 'http://api.heclouds.com/devices/504877625/datapoints?datastream_id=switch0',
+        url: 'http://api.heclouds.com/devices/504877625/datapoints?datastream_id=switch2',
         header: {
           'api-key': 's1XeGJPJSFgZslYpXCnFPG81V1w='
         },
         data: {
           "datastreams": [{
-            "id": "switch0",
+            "id": "switch2",
             "datapoints": [{
               "at": "",
               "value": judge,
@@ -194,6 +210,28 @@ Component({
       this.setData({
         modalName: e.currentTarget.dataset.target,
       })
+      function formatTime(date) {
+        var year = date.getFullYear()
+        var month = date.getMonth() + 1
+        var day = date.getDate()
+
+        var hour = date.getHours()
+        var minute = date.getMinutes()
+
+        return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute].map(formatNumber).join(':')
+      }
+
+      function formatNumber(n) {
+        n = n.toString()
+        return n[1] ? n : '0' + n
+      }
+      var time = formatTime(new Date())
+      //为页面中time赋值
+      this.setData({
+        time: time
+      })
+      //打印
+      console.log(time)
     },
     my_img_imfor_lert:function(e){
 
@@ -205,8 +243,18 @@ Component({
     },
     formSubmit: function (e) {
         this.setData({
-          time: e.detail.value.time
+          reminder: e.detail.value.reminder
         })
+      wx.setStorage({
+        key: "reminder",
+        data: this.data.reminder,
+        success: function () {
+          console.log('写入成功')
+        },
+        fail: function () {
+          console.log('发生错误')
+        }
+      })
     },
     showinfo:function(e){
       this.setData({

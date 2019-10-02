@@ -1,15 +1,21 @@
 <scroll-view scroll-y class="scrollPage">
+
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">鱼家2.0</view>
 </cu-custom>
 
 
+  <view class="cu-item">
+  <text class="bg-red margin-right text-shadow">{{reminder}}时我会提醒你</text>
+  <button class="cu-btn bg-green shadow right" bindtap="get_reminder">同步</button>
+  </view>
+  
   <view class="cu-bar bg-white">
   <view class="action">
     <text class="cuIcon-title text-pink"></text> 你的小鱼儿
   </view>
 </view>
-<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
   <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
     <view class="swiper-item" bindtap="showinfo" data-target="{{item.id}}">
       <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"  ></image>
@@ -17,7 +23,6 @@
     </view>
   </swiper-item>
 </swiper>
-
 
   <view class="cu-bar bg-white solid-bottom margin-top">
     <view class="action">
@@ -47,7 +52,7 @@
   </view>
 
 
-<view wx:for="{{swiperList}}"class="cu-modal {{modalName=='fish_infoModal'+item.id?'show':''}}">
+<view wx:for="{{swiperList}}" wx:key="key" class="cu-modal {{modalName=='fish_infoModal'+item.id?'show':''}}">
   <view class="my_lertupbar">
     <view class="cu-bar justify-end solid-bottom">
       <view class="content">鱼儿信息</view>
@@ -89,7 +94,7 @@
   </view>
 </view>
 
-<view class="cu-modal {{modaalName=='TimeSetting'?'show':''}}">
+<view class="cu-modal {{modalName=='TimeSetting'?'show':''}}">
   <view class="my_lertupbar">
     <view class="cu-bar justify-end solid-bottom">
       <view class="content">定时</view>
@@ -100,11 +105,12 @@
     <view class="my_lertcontent">
     <view class='my_content padding'>
       <form bindsubmit="formSubmit">
-        <input placeholder="请输入提醒时间" name="time"></input>
+        <input placeholder="请输入提醒时间" name="reminder" value="{{time}}"></input>
         <button form-type="submit" class="cu-btn bg-red shadow">提醒</button>
       </form>
     </view>    
     </view>
   </view>
 </view>
+
 </scroll-view>
