@@ -1,3 +1,4 @@
+<scroll-view scroll-y class="scrollPage">
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">鱼家2.0</view>
 </cu-custom>
@@ -10,8 +11,8 @@
 </view>
 <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
   <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
-    <view class="swiper-item">
-      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <view class="swiper-item" bindtap="showinfo" data-target="{{item.id}}">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"  ></image>
       <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
     </view>
   </swiper-item>
@@ -23,28 +24,49 @@
       <text class="cuIcon-title margin-right-sm text-shadow text-red">控制水泵</text>
     </view>
     <view class="action">
-      <switch class="sm" bindchange="SetShadow"></switch>
+      <switch class="sm" bindchange="my_c_bump"></switch>
     </view>
   </view>
   <view class="cu-list menu">
     <view class="cu-item">
       <text class="cuIcon-title margin-right-sm text-shadow text-red">控制加热</text>
-      <switch class="sm" bindchange="SetShadow"></switch>
+      <switch class="sm" bindchange="my_c_heat"></switch>
     </view>
     <view class="cu-item">
       <text class="cuIcon-title margin-right-sm text-shadow text-red">控制照明灯</text>
-      <switch class="sm" bindchange="SetShadow"></switch>
+      <switch class="sm" bindchange="my_c_light"></switch>
     </view>
     <view class="cu-item">
       <text class="cuIcon-title margin-right-sm text-shadow text-orange">查看温度光强</text>
-      <button class="cu-btn bg-green shadow" bindtap="mylert" data-target="ColorModal">去瞅瞅</button>
+      <button class="cu-btn bg-green shadow" bindtap="mylert_1" data-target="ColorModal">去瞅瞅</button>
     </view>
     <view class="cu-item">
       <text class="cuIcon-title margin-right-sm text-shadow text-blue">定时提醒我</text>
-      <button class="cu-btn bg-green shadow" bindtap="mylert" data-target="TimeSetting">去设置</button>
+      <button class="cu-btn bg-green shadow" bindtap="mylert_2" data-target="TimeSetting">去设置</button>
     </view>
   </view>
 
+
+<view wx:for="{{swiperList}}"class="cu-modal {{modalName=='fish_infoModal'+item.id?'show':''}}">
+  <view class="my_lertupbar">
+    <view class="cu-bar justify-end solid-bottom">
+      <view class="content">鱼儿信息</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+    </view>
+    <view class="my_lertcontent">
+    <view class='my_content padding'>
+      <text >昵称:</text>
+      <text >{{item.id}}</text>
+    </view>    
+    <view class='my_content padding'>
+      <text >饥饿度:</text>
+      <text >{{item.hunger}}</text>
+    </view>
+    </view>
+  </view>
+</view>
 
 <view class="cu-modal {{modalName=='ColorModal'?'show':''}}">
   <view class="my_lertupbar">
@@ -67,8 +89,7 @@
   </view>
 </view>
 
-
-<view class="cu-modal {{modalName=='TimeSetting'?'show':''}}">
+<view class="cu-modal {{modaalName=='TimeSetting'?'show':''}}">
   <view class="my_lertupbar">
     <view class="cu-bar justify-end solid-bottom">
       <view class="content">定时</view>
@@ -86,3 +107,4 @@
     </view>
   </view>
 </view>
+</scroll-view>
