@@ -35,8 +35,9 @@ Component({
         url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569926808268&di=9804e764f11f87459e95133fffa2ed50&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F18%2F01%2F18%2Fdf10c3097a04188d39b27c889477729d.jpg'
     }],
   },
-  onLoad() {
+  onShow: function(e){
     this.towerSwiper('swiperList');
+    console.log(111)
   },
   
   methods:{

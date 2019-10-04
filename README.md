@@ -9,7 +9,6 @@
   - 1 hour fyl zjh lhs
 - 2019/9/28 项目规划讨论 203
   - 1.5 hours 全体成员
-
 - - 2019/9/28 尝试启动树莓派 装git
     - 1 hour fyl zjh lhs
     - 黑心老板压榨员工 悲惨社员奋起服从
@@ -25,8 +24,9 @@
 - 1 hour fyl
 - 2019/10/01 拆卸鱼家1.0
 - 0.3 hour lhs fyl
-
 - 2019/10/02 函数的初步绑定
   - 2 hours zjh
 - 2019/10/02 debug 添加提醒功能
   - 2 hours fyl
+- 2019/10/04 添加页面 小优化
+  - 0.6 hour fyl
