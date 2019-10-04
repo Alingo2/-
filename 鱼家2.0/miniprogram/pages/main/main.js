@@ -5,18 +5,11 @@ Component({
   options: {
     addGlobalClass: true,
   },
-  attached: function () {
-    console.log("this.dataset.tel:" + this.dataset.reminder); //控制台打印:"400-010-9797"
-    // 设置properties值用setData()
-    this.setData({
-      reminder: this.dataset.reminder
-    });
-  },
   data: {
     temp: 33,
     light: 22,
-    time:0,
-    reminder: 0,
+    time:[0,0,0,0,0],//分别代表年，月，日，时，分
+    reminder: [],
     swiperList: [{
       id: 0,
       hunger:0,
@@ -45,10 +38,47 @@ Component({
     }],
   },
 
+  ready: function () {
+    this.updateTime()
+    this.remind_judge()
+  },
   
   methods:{
+    remind_judge:function(){
+      let _this = this
+      wx.getStorage({
+        key: 'reminder',
+        success: function (res) {
+          _this.setData({
+            reminder: res.data
+          })
+          if(_this.data.reminder)
+          {
+          for (let i = 0; i < 5; i++) {
+            if (_this.data.time[i] > parseInt(_this.data.reminder[i])) {
+              _this.setData({
+                modalName: 'timeup',
+                reminder: 0,
+              })
+              wx.setStorage({
+                key: "reminder",
+                data: 0,
+                fail: function () {
+                  console.log('发生错误')
+                }
+              })
+              break
+            }
+          }
+          }
+        },
+        fail: function () {
+          console.log('读取key1发生错误')
+        }
+      })
+    },
     get_reminder:function(){
-      var _this = this
+      let _this = this
       wx.getStorage({
         key: 'reminder',
         success: function (res) {
@@ -213,32 +243,22 @@ Component({
         modalName: e.currentTarget.dataset.target,
       })
     },
+    updateTime: function(){
+      let date = new Date()
+      let year = date.getFullYear()
+      let month = date.getMonth() + 1
+      let day = date.getDate()
+      let hour = date.getHours()
+      let minute = date.getMinutes()
+      this.setData({
+        time: [year,month,day,hour,minute]
+      })
+    },
     mylert_2: function (e) {
       this.setData({
         modalName: e.currentTarget.dataset.target,
       })
-      function formatTime(date) {
-        var year = date.getFullYear()
-        var month = date.getMonth() + 1
-        var day = date.getDate()
-
-        var hour = date.getHours()
-        var minute = date.getMinutes()
-
-        return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute].map(formatNumber).join(':')
-      }
-
-      function formatNumber(n) {
-        n = n.toString()
-        return n[1] ? n : '0' + n
-      }
-      var time = formatTime(new Date())
-      //为页面中time赋值
-      this.setData({
-        time: time
-      })
-      //打印
-      console.log(time)
+      this.updateTime()
     },
     my_img_imfor_lert:function(e){
 
@@ -249,15 +269,13 @@ Component({
       })
     },
     formSubmit: function (e) {
-        this.setData({
-          reminder: e.detail.value.reminder
-        })
+      this.setData({
+        reminder: e.detail.value.reminder.split(',')
+      })
+      let _this = this
       wx.setStorage({
         key: "reminder",
-        data: this.data.reminder,
-        success: function () {
-          console.log('写入成功')
-        },
+        data: _this.data.reminder,
         fail: function () {
           console.log('发生错误')
         }

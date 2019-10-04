@@ -30,3 +30,7 @@
   - 2 hours fyl
 - 2019/10/04 添加页面 小优化
   - 0.6 hour fyl
+- 2019/10/04 实时刷新
+  - 2 hours zjh
+- 2019/10/04 debugs 弹窗提醒
+  - 4 hours fyl
