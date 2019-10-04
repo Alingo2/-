@@ -7,7 +7,6 @@
 
   <view class="cu-item">
   <text class="bg-red margin-right text-shadow">{{reminder}}时我会提醒你</text>
-  <button class="cu-btn bg-green shadow right" bindtap="get_reminder">同步</button>
   </view>
   
   <view class="cu-bar bg-white">

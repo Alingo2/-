@@ -1,4 +1,4 @@
-<main wx:if="{{PageCur=='main'}}"></main>
+<main data-reminder="{{reminder}}" wx:if="{{PageCur=='main'}}"></main>
 <about wx:if="{{PageCur=='about'}}"></about>
 <timeline wx:if="{{PageCur=='timeline'}}"></timeline>
 <video wx:if="{{PageCur=='video'}}"></video>
