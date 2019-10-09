@@ -6,7 +6,7 @@
 
 
   <view class="cu-item">
-  <text class="bg-red margin-right text-shadow" wx:if="{{reminder}}">{{reminder}}时我会提醒你</text>
+  <text class="bg-red margin-right text-shadow" wx:if="{{reminder}}">{{reminder[0]}}年{{reminder[1]}}月{{reminder[2]}}日{{reminder[3]}}:{{reminder[4]}}时我会提醒你</text>
   </view>
   
   <view class="cu-bar bg-white">
@@ -126,7 +126,7 @@
     <view class='my_content padding'>
       该给你的鱼儿喂食啦！
     </view>
-      <button class="cu-btn bg-green shadow margin-right">我知道了</button>
+      <button class="cu-btn bg-green shadow margin-right" bindtap="hideModal">我知道了</button>
       <button class="cu-btn bg-red shadow">你帮我喂吧</button>
     </view>
   </view>
