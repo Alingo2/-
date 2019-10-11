@@ -13,7 +13,8 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/video/video"
+    "pages/video/video",
+    "pages/me/me"
   ],
   "window": {
     "backgroundTextStyle": "light",

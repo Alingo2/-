@@ -3,6 +3,7 @@
     "main":"/pages/main/main",
     "about":"/pages/about/about",
     "video":"/pages/video/video",
-    "timeline":"/pages/timeline/timeline"
+    "timeline":"/pages/timeline/timeline",
+    "me":"/pages/me/me"
   }
 }

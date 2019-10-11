@@ -1,0 +1,51 @@
+<scroll-view scroll-y class="scrollPage">
+<cu-custom bgColor="bg-gradual-green">
+  <view slot="content">账号</view>
+</cu-custom>
+
+	<view class="cu-form-group margin-top">
+  <form bindsubmit="formSubmit">
+    <view class="title">账号</view>
+    <input placeholder="请输入账号" name="id"></input>
+    <view class="title">密码</view>
+    <input placeholder="请输入密码" name="password"></input>
+    <button form-type="submit"  class="cu-btn bg-green shadow margin-left">登录</button>
+    <button class="cu-btn bg-green shadow justify-center margin-left" bindtap="alert" data-target="Signup">注册</button>
+  </form>
+</view>
+</scroll-view>
+
+<view class="cu-modal {{modalName=='Signup'?'show':''}}">
+  <view class="my_lertupbar">
+    <view class="cu-bar justify-end solid-bottom">
+      <view class="content">注册</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+    </view>
+    <view class="my_lertcontent">
+    <form bindsubmit="sign_submit">
+    <view class='my_content padding'>
+      <view class="title">用户名:</view>
+      <input placeholder="由字母组成" name="sign_id"></input>
+      <button class="cu-btn bg-green shadow">校验</button>
+    </view>    
+    <view class='my_content padding'>
+      <view class="title">密码:</view>
+      <input placeholder="我不会偷看的" name="sign_password"></input>
+    </view>
+    <view class='my_content padding'>
+      <view class="title">请重复输入密码:</view>
+      <input placeholder="防手滑" name="repeat_password"></input>
+    </view>
+    <view class='my_content padding'>
+      <view class="title">电子邮箱:</view>
+        <input placeholder="联系你" name="email"></input>
+    </view>
+    <view class='my_content padding'>
+      <button class="cu-btn bg-green shadow" form-type="submit">注册</button>
+    </view>
+    </form>
+    </view>
+  </view>
+</view>

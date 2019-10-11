@@ -2,6 +2,7 @@
 <about wx:if="{{PageCur=='about'}}"></about>
 <timeline wx:if="{{PageCur=='timeline'}}"></timeline>
 <video wx:if="{{PageCur=='video'}}"></video>
+<me wx:if="{{PageCur=='me'}}"></me>
 
 
 <view class="cu-bar tabbar bg-white shadow foot">
@@ -23,10 +24,16 @@
     </view>
     <view class="text-blue">视频流</view>
   </view>
+    <view class="action" bindtap="NavChange" data-cur="me">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/me.png"></image>
+    </view>
+    <view class="text-blue">账号</view>
+  </view>
     <view class="action" bindtap="NavChange" data-cur="about">
     <view class='cuIcon-cu-image'>
       <image src="/images/about_us.png"></image>
     </view>
-    <view class="text-blue">关于我们</view>
+    <view class="text-blue">关于</view>
   </view>
 </view>
