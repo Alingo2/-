@@ -108,7 +108,7 @@
         <button form-type="submit" class="cu-btn bg-green shadow margin-right">提醒</button>
         <button form-type="submit" class="cu-btn bg-red shadow margin-left">提醒并帮我喂</button>
       </form>
-    </view>    
+    </view>
     </view>
   </view>
 </view>

@@ -6,9 +6,25 @@ Component({
   properties: {
 
   },
+  ready:function(){
+    let _this = this
+    wx.getStorage({
+      key: 'my_movement_dataset',
+      success: function (res) {
+        _this.setData({
+          test: res.data
+        })
+        console.log(res.data)
+      },
+      fail: function () {
+        console.log('读取key1发生错误')
+      }
+    })
+  },
   data: {
-    color:["green","red","blue"],
+    color:["green","red","blue","gray","yellow","purple","pink"],
     icon: ["noticefill", "attentionforbidfill","evaluate_fill",],
+    test:[],
     my_dataset: [
       {
         date: "9-19",

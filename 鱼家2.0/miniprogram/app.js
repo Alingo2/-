@@ -48,6 +48,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    G_reminder:0
+    G_reminder:0,
+    data_set: [{}, {}, {}, {}, {}, {}, {}]
   }
 })

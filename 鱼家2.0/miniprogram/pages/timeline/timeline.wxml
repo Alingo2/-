@@ -3,11 +3,11 @@
   <view slot="content">时间轴</view>
 </cu-custom>
 
-<view class="cu-timeline" wx:for="{{my_dataset}}" wx:key="date">
-  <view class="cu-time">{{item.date}}</view>
-  <view class="cu-item cur cuIcon-{{color[content.movement_type]}}" wx:for="{{item.content}}" wx:for-item="content" wx:key="movement_type">
-    <view class="content bg-{{color[content.movement_type]}} shadow-blur">
-      <text>{{content.text}}</text>
+<view class="cu-timeline" wx:for="{{test}}">
+  <view class="cu-time">{{item.id}}</view>
+  <view class="cu-item cur cuIcon-{{color[item.movement_type]}}" wx:for="{{item.datapoints}}" wx:for-item="datapoints" wx:key="movement_type">
+    <view class="content bg-{{color[item.movement_type]}} shadow-blur">
+      <text>{{datapoints.value}}</text>
     </view>
   </view>
 </view>
