@@ -27,17 +27,18 @@
     <form bindsubmit="sign_submit">
     <view class='my_content padding'>
       <view class="title">用户名:</view>
-      <input placeholder="由字母组成" name="sign_id"></input>
-      <button class="cu-btn bg-green shadow">校验</button>
-    </view>    
+      <input placeholder="由字母组成" bindinput="sign_id"></input>
+    </view>
+    <view wx:if="{{!name_judge}}" class="bg-red text-shadow">名字已被注册过</view>
     <view class='my_content padding'>
       <view class="title">密码:</view>
-      <input placeholder="我不会偷看的" name="sign_password"></input>
+      <input placeholder="我不会偷看的" bindinput="sign_password"></input>
     </view>
     <view class='my_content padding'>
       <view class="title">请重复输入密码:</view>
-      <input placeholder="防手滑" name="repeat_password"></input>
+      <input placeholder="防手滑" bindinput="repeat_password"></input>
     </view>
+    <view wx:if="{{!repeat_judge}}" class="bg-red text-shadow">两次密码不一致</view>
     <view class='my_content padding'>
       <view class="title">电子邮箱:</view>
         <input placeholder="联系你" name="email"></input>

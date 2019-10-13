@@ -15,14 +15,35 @@ Component({
     password:"",
     sign_id:"",
     sign_password:"",
-    repeat_password:"",
     email:"",
+    repeat_judge:false,
+    name_judge:false
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    sign_password: function(e){
+      this.setData({
+        sign_password:e.detail.value
+      })
+    },
+    repeat_password: function (e) {
+      if (this.data.sign_password == e.detail.value){
+        this.setData({
+          repeat_judge:true
+        })
+      }
+      else{
+        this.setData({
+          repeat_judge: false
+        })
+      }
+    },
+    sign_id: function(e){     //查数据库 看看有无重复
+      let sign_id = e.detail.value
+    },
     alert: function(e){
       this.setData({
         modalName: e.currentTarget.dataset.target,
@@ -47,13 +68,21 @@ Component({
   sign_submit: function(e){
     this.setData({
       sign_id:e.detail.value.sign_id,
-      sign_password:e.detail.value.sign_password,
       email:e.detail.value.email
     })
+    if(this.data.repeat_judge){
     wx.showToast({
       title: '注册成功',
       duration: 1000,
     })
+    }
+    else{
+      wx.showToast({
+        title: '注册失败',
+        icon:"fail",
+        duration: 1000,
+      })
+    }
   }
   }
 })
