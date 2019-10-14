@@ -8,7 +8,11 @@ Component({
   data: {
     temp: 33,
     light: 22,
-    time:[0,0,0,0,0],//分别代表年，月，日，时，分
+    time: [{ value: 0, format: ':'},
+           { value: 0, format: ':' },
+           { value: 0, format: ':' },
+           { value: 0, format: ':' },
+           { value: 0, format: ':' },],//分别代表年，月，日，时，分
     reminder: [],
     swiperList: [{
       id: 0,
@@ -55,7 +59,7 @@ Component({
           if(_this.data.reminder)
           {
           for (let i = 0; i < 5; i++) {
-            if (_this.data.time[i] > parseInt(_this.data.reminder[i])) {
+            if (_this.data.time[i].value > parseInt(_this.data.reminder[i])) {
               _this.setData({
                 modalName: 'timeup',
                 reminder: 0,
@@ -251,7 +255,11 @@ Component({
       let hour = date.getHours()
       let minute = date.getMinutes()
       this.setData({
-        time: [year,month,day,hour,minute]
+        time: [{ value: year, format: ':' },
+        { value: month, format: ':' },
+        { value: day, format: ':' },
+        { value: hour, format: ':' },
+        { value: minute, format: '' },]
       })
     },
     mylert_2: function (e) {
@@ -270,7 +278,7 @@ Component({
     },
     formSubmit: function (e) {
       this.setData({
-        reminder: e.detail.value.reminder.split(',')
+        reminder: e.detail.value.reminder.split(':')
       })
       let _this = this
       wx.setStorage({

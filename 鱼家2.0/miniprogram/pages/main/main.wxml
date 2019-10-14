@@ -104,7 +104,7 @@
     <view class="my_lertcontent">
     <view class='my_content padding'>
       <form bindsubmit="formSubmit">
-        <input placeholder="请输入提醒时间" name="reminder" value="{{time}}"></input>
+        <input placeholder="请输入提醒时间" name="reminder" value="{{time[0].value}}{{time[0].format}}{{time[1].value}}{{time[1].format}}{{time[2].value}}{{time[2].format}}{{time[3].value}}{{time[3].format}}{{time[4].value}}{{time[4].format}}"></input>
         <button form-type="submit" class="cu-btn bg-green shadow margin-right">提醒</button>
         <button form-type="submit" class="cu-btn bg-red shadow margin-left">提醒并帮我喂</button>
       </form>
