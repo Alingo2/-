@@ -7,7 +7,7 @@
   <view class="cu-time">{{item.id}}</view>
   <view class="cu-item cur cuIcon-{{color[item.movement_type]}}" wx:for="{{item.datapoints}}" wx:for-item="datapoints" wx:key="movement_type">
     <view class="content bg-{{color[item.movement_type]}} shadow-blur">
-      <text>{{datapoints.value}}</text>
+      <text>{{datapoints.at}}</text>
     </view>
   </view>
 </view>

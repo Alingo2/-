@@ -44,6 +44,7 @@ page {
 	--brownLight: #ede1d9;
 	--greyLight: #e7ebed;
 	/* 渐变色 */
+
 	--gradualRed: linear-gradient(45deg, #f43f3b, #ec008c);
 	--gradualOrange: linear-gradient(45deg, #ff9700, #ed1c24);
 	--gradualGreen: linear-gradient(45deg, #39b54a, #8dc63f);
@@ -3849,7 +3850,9 @@ scroll-view.cu-steps .cu-item {
 .text-right {
 	text-align: right;
 }
-
+.text-black{
+  color:var(--black)
+}
 .text-red,
 .line-red,
 .lines-red {

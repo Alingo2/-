@@ -11,9 +11,15 @@ Component({
     wx.getStorage({
       key: 'my_movement_dataset',
       success: function (res) {
+        for (let i = 0; i < res.data.length; i++) {
+          for (let j = 0; j < res.data[i].datapoints.length; j++) {
+            res.data[i].datapoints[j].at=res.data[i].datapoints[j].at.split('.')[0]
+          }
+        }
         _this.setData({
           test: res.data
         })
+
         console.log(res.data)
       },
       fail: function () {

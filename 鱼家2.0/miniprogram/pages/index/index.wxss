@@ -16,7 +16,49 @@ page {
 	background-color: #f8f8f8;
 	border-radius: 30rpx;
 	overflow: hidden;
+  background-image: linear-gradient(45deg,  #ff8185,#ffd900);
+	color: var(--white);
+}
+.my_lertupbar1{
+  position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600rpx;
+	max-width: 100%;
+	background-color: #f8f8f8;
+	border-radius: 30rpx;
+	overflow: hidden;
   background-image: var(--gradualBlue);
+	color: var(--white);
+}
+.my_lertupbar2{
+  position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600rpx;
+	max-width: 100%;
+	background-color: #f8f8f8;
+	border-radius: 30rpx;
+	overflow: hidden;
+  background-image: linear-gradient(45deg,  #ff8b3e,#ff0000);
+	color: var(--white);
+}
+.xingjizhengba_style{
+  position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600rpx;
+	max-width: 100%;
+	background-color: #f8f8f8;
+	border-radius: 30rpx;
+	overflow: hidden;
+  background-image: linear-gradient(45deg, #0081ff, #ed1c24);
 	color: var(--white);
 }
 .my_lertcontent{
