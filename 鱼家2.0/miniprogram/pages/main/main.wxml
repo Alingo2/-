@@ -48,6 +48,11 @@
       <text class="cuIcon-title margin-right-sm text-shadow text-blue">定时提醒我</text>
       <button class="cu-btn bg-green shadow" bindtap="mylert_2" data-target="TimeSetting">去设置</button>
     </view>
+        <view class="cu-item">
+      <text class="cuIcon-title margin-right-sm text-shadow text-blue">查看数据变化</text>
+      <button class="cu-btn bg-green shadow" bindtap="mylert_3" data-target="TimeSetting">去瞄瞄</button>
+    </view>
+            <view class="cu-item"></view>
   </view>
 
 

@@ -48,6 +48,10 @@ App({
   },
   globalData: {
     userInfo: null,
+    temperature: {},
+    light: {},
+    humidity: {},
+    caowen: {},
     G_reminder:0,
     data_set: [{}, {}, {}, {}, {}, {}, {}]
   }

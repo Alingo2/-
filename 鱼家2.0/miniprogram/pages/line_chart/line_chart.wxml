@@ -1,0 +1,8 @@
+<!--miniprogr<!--pages/information/tem/tem.wxml-->
+<canvas class = "canvas" id="chart1"
+canvas-id="tempe"></canvas>
+<canvas class = "canvas" id="chart2"
+canvas-id="light"></canvas>
+<canvas class = "canvas" id="chart3"
+canvas-id="caowen"></canvas>
+<button bindtap='return'>返回</button>

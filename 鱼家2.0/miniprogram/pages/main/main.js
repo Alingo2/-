@@ -268,6 +268,36 @@ Component({
       })
       this.updateTime()
     },
+     mylert_3: function () {
+    //从oneNET请求我们的Wi-Fi气象站的数据
+    const requestTask = wx.request({
+      url: 'https://api.heclouds.com/devices/503071333/datapoints?datastream_id=Light,Temperature,caowen&limit=15',
+      header: {
+        'content-type': 'application/json',
+        'api-key': 'g81xoJ5mSA4t=vQLvEDIaUKkZ60='
+      },
+      success: function (res) {
+        //console.log(res.data)
+        //拿到数据后保存到全局数据
+        var app = getApp()
+        app.globalData.temperature = res.data.data.datastreams[0]
+        app.globalData.light = res.data.data.datastreams[1]
+        app.globalData.caowen = res.data.data.datastreams[2]
+        console.log(res.data.data)
+        //跳转到天气页面，根据拿到的数据绘图
+        wx.navigateTo({
+          url: "../line_chart/line_chart",
+        })
+      },
+      fail: function (res) {
+        console.log("fail!!!")
+      },
+
+      complete: function (res) {
+        console.log("end")
+      }
+    })
+  },
     my_img_imfor_lert:function(e){
 
     },
