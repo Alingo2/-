@@ -20,7 +20,6 @@ Component({
           test: res.data
         })
 
-        console.log(res.data)
       },
       fail: function () {
         console.log('读取key1发生错误')

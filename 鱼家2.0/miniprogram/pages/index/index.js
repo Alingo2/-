@@ -35,7 +35,6 @@ Page({
         'api-key': 's1XeGJPJSFgZslYpXCnFPG81V1w='
       },
       success: function (res) {
-        console.log(res.data)
         var app = getApp()
             wx.getStorage({
       key: 'reminder',
