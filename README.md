@@ -109,3 +109,23 @@
 - 2019/11/26 图像识别
   
   - 1.5hour fyl
+
+- 2019/11/27 HSV模型
+  
+  - 2hour zjh
+
+- 2019/11/27 respi接受数据
+  
+  - 0.5hour lhs
+
+- 2019/11/27 前后端打通
+  
+  - 1.5hours fyl
+
+- 2019/11/27 respi视频连接
+  
+  - 1.5hours lhs
+  
+  - 1hour fyl
+
+

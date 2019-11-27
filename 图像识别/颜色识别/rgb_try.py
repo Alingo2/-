@@ -14,13 +14,9 @@ if __name__ == '__main__':
         HSV模型中颜色的参数分别是：色调（H），饱和度（S），明度（V）
         下面两个值是要识别的颜色范围
         '''
-        # Lower = np.array([20, 20, 20])  # 要识别颜色的下限
         Lower = np.array([156,43,46])  # 要识别颜色的下限
-        # Upper = np.array([30, 255, 255])  # 要识别的颜色的上限
         Upper = np.array([180, 255, 255])  # 要识别的颜色的上限
-        # Lower = np.array([20, 20, 20])  # 要识别颜色的下限
         Lower1 = np.array([35,43,46])  # 要识别颜色的下限
-        # Upper = np.array([30, 255, 255])  # 要识别的颜色的上限
         Upper1 = np.array([77, 255, 255])  # 要识别的颜色的上限
         # mask是把HSV图片中在颜色范围内的区域变成白色，其他区域变成黑色
         mask = cv2.inRange(HSV, Lower, Upper)

@@ -16,7 +16,8 @@
     "pages/video/video",
     "pages/me/me",
     "pages/line_chart/line_chart",
-    "pages/video_page/video_page"
+    "pages/video_page/video_page",
+    "pages/files/files"
   ],
   "window": {
     "backgroundTextStyle": "light",

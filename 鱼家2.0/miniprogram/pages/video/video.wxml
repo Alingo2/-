@@ -13,4 +13,13 @@
   </view>
 </view>
 
+ <view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text> 文件站
+  </view>
+    <view class="cu-item">
+    <navigator class="cu-btn bg-green shadow" url="../files/files">文件下载</navigator>
+  </view>
+</view>
+
 </scroll-view>

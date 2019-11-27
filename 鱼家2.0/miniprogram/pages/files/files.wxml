@@ -1,0 +1,3 @@
+<!--pages/files/files.wxml-->
+<text>pages/files/files.wxml</text>
+<web-view src="http://192.168.43.17:80"></web-view>
