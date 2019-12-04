@@ -128,4 +128,30 @@
   
   - 1hour fyl
 
+- 2019/11/28 亚克力版裁切 测试传感器
+  
+  - 1.5hour tyh
+  
+  - 0.5hour fxa
+
+- 2019/11/28 后端连接
+  
+  - 0.5hour fyl
+
+- 2019/11/30  云服务器配置搭建
+  
+  - 2hour fyl
+  
+  - 1hour lhs
+
+- 2019/12/1 gunnicorn配置
+  
+  - 1hour fyl
+  
+  - 0.5hour lhs
+
+- 2019/12/1 颜色识别
+  
+  - 2.5hour zjh
+
 
