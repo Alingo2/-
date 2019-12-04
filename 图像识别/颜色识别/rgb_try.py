@@ -83,10 +83,11 @@ def pic_find(C,img):
             HSV模型中颜色的参数分别是：色调（H），饱和度（S），明度（V）
             下面两个值是要识别的颜色范围
             '''
+            p=1
+            a = []
             k=0
             for j in C:
                 if(j!=0):
-                    print(k)
                     if(k!=0):
                         Lower=np.array([data[k][0],data[k][2],data[k][4]])
                         Upper=np.array([data[k][1],data[k][3],data[k][5]])
@@ -103,9 +104,12 @@ def pic_find(C,img):
                             # 在图像上画上矩形（图片、左上角坐标、右下角坐标、颜色、线条宽度）
                             if(w>30and h>30):
                                 cv2.rectangle(Img, (x, y), (x + w, y + h), (0, 255,255), 3)
+                                a.append([x+w/2,y+h/2,w,h,p])
+                                print([x+w/2,y+h/2,w,h,p])
                                 # 给识别对象写上标号
                                 font = cv2.FONT_HERSHEY_SIMPLEX
-                                cv2.putText(Img, str('1'), (x - 10, y + 10), font, 1, (255, 0, 255), 2)  # 加减10是调整字符位置
+                                cv2.putText(Img, str(p), (x - 10, y + 10), font, 1, (255, 0, 255), 2)  # 加减10是调整字符位置
+                                p+=1
                 k+=1
             #cv2.imshow('Img', Img)
            # cv2.imwrite('Img.png', Img)  # 将画上矩形的图形保存到当前目录
@@ -114,35 +118,44 @@ def pic_find(C,img):
         #if Key == 'q':
             #cv2.destroyAllWindows()
             #break
-    return Img
+    print(a)
+    return [Img,a]
 
-cap = cv2.VideoCapture(0)
- 
-# set blue thresh 设置HSV中蓝色、天蓝色范围
-lower_blue = np.array([78,43,46])
-upper_blue = np.array([110,255,255])
- 
-while(1):
-    # get a frame and show 获取视频帧并转成HSV格式, 利用cvtColor()将BGR格式转成HSV格式，参数为cv2.COLOR_BGR2HSV。
-    ret, frame = cap.read()
-    cv2.imshow('Capture', frame)
-    res = pic_find([0, 1, 1, 1, 1, 1, 1, 1, 1, 1], frame)
-    print(frame)
+def video_fun(filename):
+    cap = cv2.VideoCapture(filename)
+    print(cap)
 
-    # change to hsv model
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
- 
-    # get mask 利用inRange()函数和HSV模型中蓝色范围的上下界获取mask，mask中原视频中的蓝色部分会被弄成白色，其他部分黑色。
-    mask = cv2.inRange(hsv, lower_blue, upper_blue)
-    cv2.imshow('Mask', mask)
- 
-    # detect blue 将mask于原视频帧进行按位与操作，则会把mask中的白色用真实的图像替换：
+    # set blue thresh 设置HSV中蓝色、天蓝色范围
+    lower_blue = np.array([78,43,46])
+    upper_blue = np.array([110,255,255])
 
-    #res = cv2.bitwise_and(frame, frame, mask=mask)
-    cv2.imshow('Result', res)
- 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
- 
-cap.release()
-cv2.destroyAllWindows()
+    while(1):
+        # get a frame and show 获取视频帧并转成HSV格式, 利用cvtColor()将BGR格式转成HSV格式，参数为cv2.COLOR_BGR2HSV。
+        ret, frame = cap.read()
+        if frame is None:
+            break
+        else:
+            cv2.imshow('Capture', frame)
+            [res,pos] = pic_find([0, 1, 1, 1, 1, 1, 1, 1, 1, 1], frame)
+            #print(pos)
+
+            # change to hsv model
+            hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+            # get mask 利用inRange()函数和HSV模型中蓝色范围的上下界获取mask，mask中原视频中的蓝色部分会被弄成白色，其他部分黑色。
+            mask = cv2.inRange(hsv, lower_blue, upper_blue)
+            cv2.imshow('Mask', mask)
+
+            # detect blue 将mask于原视频帧进行按位与操作，则会把mask中的白色用真实的图像替换：
+
+            #res = cv2.bitwise_and(frame, frame, mask=mask)
+            cv2.imshow('Result', res)
+
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+video_fun(r'yu.mp4')
+#pic_find([0, 1, 1, 1, 1, 1, 1, 1, 1, 1],cv2.imread(r'image2.jpg'))
