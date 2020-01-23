@@ -1,4 +1,3 @@
-// pages/about/about.js
 Component({
   options: {
     addGlobalClass: true,

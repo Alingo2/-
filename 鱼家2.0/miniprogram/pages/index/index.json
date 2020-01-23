@@ -2,7 +2,7 @@
   "usingComponents": {
     "main":"/pages/main/main",
     "about":"/pages/about/about",
-    "video":"/pages/video/video",
+    "video":"/pages/video_push/video_push",
     "timeline":"/pages/timeline/timeline",
     "me":"/pages/me/me"
   }
