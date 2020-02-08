@@ -8,12 +8,24 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.0",
+	"libVersion": "2.10.1",
 	"appid": "wxed91cd6567a0ff0c",
-	"projectname": "%E9%B1%BC%E5%AE%B66.8",
+	"projectname": "%E9%B1%BC%E5%AE%B62.0",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
