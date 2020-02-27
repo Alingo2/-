@@ -54,5 +54,5 @@ def rgb_tran_hsv(R, G, B):
     print(a)
     return a
 
-
+print(rgb_tran_hsv(150, 200, 250)[0], rgb_tran_hsv(150, 200, 250)[1], rgb_tran_hsv(150, 200, 250)[2])
 color_judge(rgb_tran_hsv(150, 200, 250)[0], rgb_tran_hsv(150, 200, 250)[1], rgb_tran_hsv(150, 200, 250)[2])

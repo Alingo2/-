@@ -80,7 +80,7 @@ if __name__ == '__main__':
         HSV模型中颜色的参数分别是：色调（H），饱和度（S），明度（V）
         下面两个值是要识别的颜色范围
         '''
-        for(j=0;j<10;j++):
+        for j in range(10):
             if(C[j]!=0):
                 if(j!=0):
                     Lower=np.array([data[j][0],data[j][2],data[j][4]])
@@ -93,15 +93,15 @@ if __name__ == '__main__':
                     target = cv2.bitwise_and(Img, Img, mask=dilation)
                     ret, binary = cv2.threshold(dilation, 127, 255, cv2.THRESH_BINARY)
                     contours, hierarchy = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-                            for i in contours:  # 遍历所有的轮廓
-                                x, y, w, h = cv2.boundingRect(i)  # 将轮廓分解为识别对象的左上角坐标和宽、高
-                                # 在图像上画上矩形（图片、左上角坐标、右下角坐标、颜色、线条宽度）
-                                if(w>30and h>30):
-                                    cv2.rectangle(Img, (x, y), (x + w, y + h), (0, 255,255), 3)
-                                    # 给识别对象写上标号
-                                    print(w,h)
-                                    font = cv2.FONT_HERSHEY_SIMPLEX
-                                    cv2.putText(Img, str(p), (x - 10, y + 10), font, 1, (255, 0, 255), 2)  # 加减10是调整字符位置
+                    for i in contours:  # 遍历所有的轮廓
+                        x, y, w, h = cv2.boundingRect(i)  # 将轮廓分解为识别对象的左上角坐标和宽、高
+                        # 在图像上画上矩形（图片、左上角坐标、右下角坐标、颜色、线条宽度）
+                        if(w>30and h>30):
+                            cv2.rectangle(Img, (x, y), (x + w, y + h), (0, 255,255), 3)
+                            # 给识别对象写上标号
+                            print(w,h)
+                            font = cv2.FONT_HERSHEY_SIMPLEX
+                            cv2.putText(Img, str(p), (x - 10, y + 10), font, 1, (255, 0, 255), 2)  # 加减10是调整字符位置
         Lower = np.array([26,43,46])  # 要识别颜色的下限
         Upper = np.array([34, 255, 255])  # 要识别的颜色的上限
         Lower1 = np.array([35,43,46])  # 要识别颜色的下限

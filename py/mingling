@@ -1,0 +1,2 @@
+./mjpg_streamer -i "./input_raspicam.so" -o "./output_http.so -w ./www" Æô¶¯ÉãÏñÍ·
+raspistill -t 1000 -o image1.jpg -w 640 -h 480 -q 100 ÅÄÕÕ
